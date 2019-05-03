@@ -7,7 +7,6 @@ int main (void)
     float X;
     float Viy;
     float Y;
-    float Vfy=-Viy;
     float ay=-9.8;
     float ax=0;
     float VI;
@@ -20,12 +19,13 @@ int main (void)
     angle=((givenangle*3.14159)/180);
     Vix=VI*cos(angle);
     Viy=VI*sin(angle);
-    time=(Vfy-Viy)/ay;
-    Y=(Viy*time)+(.5*ay*(pow(time, 2)));
+    time=(Viy*-2)/ay;
+    float Time=0.5*time;
+    Y=-(0.5*ay*(Time*Time));
     X=Vix*time;
-printf("max height is:%f\n",Y);
-printf("max distance is:%f\n",X);
-printf("airtime=%f\n",time);
+printf("max height is:%f m\n",Y);
+printf("max distance is:%f m\n",X);
+printf("airtime=%f s\n",time);
 }
 
 
